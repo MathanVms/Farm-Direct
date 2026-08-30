@@ -1,0 +1,100 @@
+{% extends "products/base.html" %}
+
+{% load static %}
+
+{% block title %}
+FarmDirect | Fresh Farm Products
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            FRESH FROM LOCAL FARMS
+        </span>
+
+        <h1>
+            Fresh Products.<br>
+            Directly From Farmers.
+        </h1>
+
+        <p>
+            Discover fresh and quality agricultural products
+            sourced directly from local farmers.
+        </p>
+
+        <a href="{% url 'product_list' %}" class="hero-button">
+            Browse Products
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="categories">
+
+    <div class="section-heading">
+        <span>EXPLORE</span>
+        <h2>Shop by Category</h2>
+        <p>Fresh agricultural products for your everyday needs.</p>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <div class="category-icon">🥕</div>
+            <h3>Vegetables</h3>
+            <p>Fresh farm-grown vegetables.</p>
+        </div>
+
+        <div class="category-card">
+            <div class="category-icon">🍎</div>
+            <h3>Fruits</h3>
+            <p>Fresh and naturally grown fruits.</p>
+        </div>
+
+        <div class="category-card">
+            <div class="category-icon">🌾</div>
+            <h3>Grains</h3>
+            <p>Quality grains directly from farms.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-section">
+
+    <div class="about-content">
+
+        <span>WHY FARMDIRECT?</span>
+
+        <h2>
+            Supporting Local Farmers,
+            Delivering Freshness.
+        </h2>
+
+        <p>
+            FarmDirect helps customers discover quality
+            agricultural products while giving local farmers
+            a simple way to showcase and manage their products.
+        </p>
+
+        <a href="{% url 'product_list' %}" class="secondary-button">
+            Explore Products
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
