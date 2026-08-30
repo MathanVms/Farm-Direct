@@ -1,0 +1,208 @@
+/* =================================
+   Register Page
+================================= */
+
+.auth-page {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 6%;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 460px;
+
+    padding: 40px;
+
+    background-color: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =================================
+   Register Header
+================================= */
+
+.auth-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.auth-icon {
+    margin-bottom: 15px;
+
+    font-size: 42px;
+}
+
+.auth-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #2e7d32;
+}
+
+.auth-header h1 {
+    margin-bottom: 12px;
+
+    font-size: 30px;
+
+    color: #1b5e20;
+}
+
+.auth-header p {
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: #666;
+}
+
+
+/* =================================
+   Form
+================================= */
+
+.auth-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d8ddd8;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    color: #333;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #2e7d32;
+
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+
+/* =================================
+   Register Button
+================================= */
+
+.auth-button {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #2e7d32;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.auth-button:hover {
+    background-color: #1b5e20;
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   Register Footer
+================================= */
+
+.auth-footer {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eeeeee;
+
+    text-align: center;
+}
+
+.auth-footer p {
+    font-size: 14px;
+
+    color: #666;
+}
+
+.auth-footer a {
+    color: #2e7d32;
+
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =================================
+   Responsive Design
+================================= */
+
+@media (max-width: 500px) {
+
+    .auth-page {
+        padding: 50px 5%;
+    }
+
+    .auth-container {
+        padding: 30px 22px;
+    }
+
+    .auth-header h1 {
+        font-size: 26px;
+    }
+}
