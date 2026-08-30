@@ -1,0 +1,332 @@
+/* =================================
+   About Hero
+================================= */
+
+.about-hero {
+    padding: 90px 8%;
+
+    background-color: #eef7ee;
+}
+
+.about-hero-content {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.about-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #2e7d32;
+}
+
+.about-hero h1 {
+    margin-bottom: 20px;
+
+    font-size: 48px;
+    line-height: 1.2;
+
+    color: #1b5e20;
+}
+
+.about-hero p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* =================================
+   About Story
+================================= */
+
+.about-story {
+    padding: 80px 8%;
+
+    background-color: #ffffff;
+}
+
+.about-story-content {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.story-heading span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #2e7d32;
+}
+
+.story-heading h2 {
+    font-size: 36px;
+    line-height: 1.3;
+
+    color: #1b5e20;
+}
+
+.story-text p {
+    margin-bottom: 18px;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #666;
+}
+
+.story-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =================================
+   Values
+================================= */
+
+.about-values {
+    padding: 80px 8%;
+
+    background-color: #f7f8f3;
+}
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-heading span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #2e7d32;
+}
+
+.section-heading h2 {
+    margin-bottom: 12px;
+
+    font-size: 34px;
+
+    color: #1b5e20;
+}
+
+.section-heading p {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #666;
+}
+
+.values-grid {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.value-card {
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+}
+
+.value-icon {
+    margin-bottom: 15px;
+
+    font-size: 42px;
+}
+
+.value-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 19px;
+
+    color: #1b5e20;
+}
+
+.value-card p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* =================================
+   Call To Action
+================================= */
+
+.about-cta {
+    padding: 80px 8%;
+
+    background-color: #1b5e20;
+
+    text-align: center;
+}
+
+.about-cta-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.about-cta-content span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+}
+
+.about-cta h2 {
+    margin-bottom: 15px;
+
+    font-size: 34px;
+
+    color: #ffffff;
+}
+
+.about-cta p {
+    margin-bottom: 25px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #e8f5e9;
+}
+
+.about-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 7px;
+
+    background-color: #ffffff;
+
+    color: #1b5e20;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.about-button:hover {
+    background-color: #eef7ee;
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   Responsive Design
+================================= */
+
+@media (max-width: 800px) {
+
+    .about-hero {
+        padding: 70px 6%;
+    }
+
+    .about-hero h1 {
+        font-size: 40px;
+    }
+
+    .about-story-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .about-hero h1 {
+        font-size: 34px;
+    }
+
+    .about-story,
+    .about-values,
+    .about-cta {
+        padding: 60px 5%;
+    }
+
+    .story-heading h2,
+    .section-heading h2,
+    .about-cta h2 {
+        font-size: 28px;
+    }
+}
