@@ -1,0 +1,52 @@
+{% extends "products/base.html" %}
+
+{% load static %}
+
+{% block title %}
+Order Successful | FarmDirect
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/order_success.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="order-success-page">
+
+    <div class="success-card">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <span class="success-label">
+            ORDER CONFIRMED
+        </span>
+
+        <h1>
+            Thank You for Your Order!
+        </h1>
+
+        <p>
+            Your order has been placed successfully.
+            Your fresh farm products will be delivered soon.
+        </p>
+
+        <div class="success-actions">
+
+            <a href="{% url 'product_list' %}" class="continue-button">
+                Continue Shopping
+            </a>
+
+            <a href="{% url 'home' %}" class="home-button">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
