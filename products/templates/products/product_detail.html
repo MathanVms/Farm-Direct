@@ -1,0 +1,144 @@
+{% extends "products/base.html" %}
+
+{% load static %}
+
+{% block title %}
+{{ product.name }} | FarmDirect
+{% endblock %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'products/product_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="product-detail-page">
+
+```
+<div class="product-detail-container">
+
+    <!-- Product Image -->
+
+    <div class="product-detail-image">
+
+        {% if product.image %}
+
+            <img
+                src="{{ product.image.url }}"
+                alt="{{ product.name }}"
+            >
+
+        {% else %}
+
+            <div class="product-image-placeholder">
+                🌱
+            </div>
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- Product Information -->
+
+    <div class="product-detail-info">
+
+        <span class="product-category">
+            {{ product.category.name }}
+        </span>
+
+        <h1>
+            {{ product.name }}
+        </h1>
+
+        <p class="product-description">
+            {{ product.description }}
+        </p>
+
+
+        <!-- Price -->
+
+        <div class="product-price">
+
+            <span>
+                ₹{{ product.price }}
+            </span>
+
+            <small>
+                / {{ product.unit }}
+            </small>
+
+        </div>
+
+
+        <!-- Product Information -->
+
+        <div class="product-meta">
+
+            <div class="meta-item">
+
+                <span class="meta-label">
+                    Available Quantity
+                </span>
+
+                <strong>
+                    {{ product.quantity }} {{ product.unit }}
+                </strong>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <span class="meta-label">
+                    Harvest Date
+                </span>
+
+                <strong>
+                    {{ product.harvest_date }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Action -->
+
+        <div class="product-actions">
+
+            <form
+                method="POST"
+                action="{% url 'add_to_cart' product.id %}"
+            >
+
+                {% csrf_token %}
+
+                <button
+                    type="submit"
+                    class="add-cart-button"
+                >
+                    Add to Cart
+                </button>
+
+            </form>
+
+
+            <a
+                href="{% url 'product_list' %}"
+                class="back-button"
+            >
+                Back to Products
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+{% endblock %}
