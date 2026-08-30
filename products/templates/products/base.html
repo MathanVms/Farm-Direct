@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{% block title %}FarmDirect{% endblock %}</title>
+
+<link rel="stylesheet" href="{% static 'products/base.css' %}">
+
+{% block extra_css %}
+{% endblock %}
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+<nav class="navbar">
+
+    <a href="{% url 'home' %}" class="logo">
+        <span class="logo-icon">🌱</span>
+        <span>FarmDirect</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="{% url 'home' %}">
+            Home
+        </a>
+
+        <a href="{% url 'product_list' %}">
+            Products
+        </a>
+
+        <a href="{% url 'about' %}">
+            About
+        </a>
+
+        {% if user.is_authenticated %}
+
+            <span class="welcome-user">
+                Welcome, {{ user.first_name|default:user.username }}
+            </span>
+
+            <form method="POST" action="{% url 'logout' %}" class="logout-form">
+
+                {% csrf_token %}
+
+                <button type="submit" class="logout-button">
+                    Logout
+                </button>
+
+            </form>
+
+        {% else %}
+
+            <a href="{% url 'login' %}">
+                Login
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</nav>
+
+
+</header>
+
+<main class="main-content">
+
+{% block content %}
+{% endblock %}
+
+</main>
+
+<footer class="site-footer">
+
+
+<p>
+    &copy; 2026 FarmDirect.
+    Fresh from local farmers to your door.
+</p>
+
+</footer>
+
+</body>
+
+</html>
