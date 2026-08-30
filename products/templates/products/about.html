@@ -1,0 +1,182 @@
+{% extends "products/base.html" %}
+
+{% load static %}
+
+{% block title %}
+About | FarmDirect
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="about-hero">
+
+    <div class="about-hero-content">
+
+        <span class="about-label">
+            ABOUT FARMDIRECT
+        </span>
+
+        <h1>
+            Fresh Food.<br>
+            Local Farmers.
+        </h1>
+
+        <p>
+            FarmDirect connects customers with local farmers,
+            making it easier to discover fresh and quality
+            agricultural products.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="about-story">
+
+    <div class="about-story-content">
+
+        <div class="story-heading">
+
+            <span>
+                OUR STORY
+            </span>
+
+            <h2>
+                Connecting Farms With Families.
+            </h2>
+
+        </div>
+
+        <div class="story-text">
+
+            <p>
+                FarmDirect was created to provide a simple
+                platform where customers can discover fresh
+                agricultural products directly from local farmers.
+            </p>
+
+            <p>
+                By bringing farmers and customers closer together,
+                FarmDirect aims to make fresh products more
+                accessible while helping farmers showcase their
+                products online.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-values">
+
+    <div class="section-heading">
+
+        <span>
+            WHAT WE VALUE
+        </span>
+
+        <h2>
+            Built Around Freshness and Trust.
+        </h2>
+
+        <p>
+            Our platform focuses on creating a simple and
+            reliable experience for both customers and farmers.
+        </p>
+
+    </div>
+
+
+    <div class="values-grid">
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🌱
+            </div>
+
+            <h3>
+                Fresh Products
+            </h3>
+
+            <p>
+                Discover quality agricultural products
+                sourced directly from local farms.
+            </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🤝
+            </div>
+
+            <h3>
+                Local Farmers
+            </h3>
+
+            <p>
+                Give local farmers a simple way to showcase
+                and manage their products.
+            </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🛒
+            </div>
+
+            <h3>
+                Simple Shopping
+            </h3>
+
+            <p>
+                Make it easy for customers to explore,
+                select and purchase fresh products.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-cta">
+
+    <div class="about-cta-content">
+
+        <span>
+            FARM FRESH
+        </span>
+
+        <h2>
+            Ready to Discover Fresh Products?
+        </h2>
+
+        <p>
+            Explore agricultural products from local farmers
+            and find something fresh for your everyday needs.
+        </p>
+
+        <a href="{% url 'product_list' %}" class="about-button">
+            Browse Products
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
