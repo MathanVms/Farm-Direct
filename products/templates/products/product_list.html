@@ -1,0 +1,196 @@
+{% extends "products/base.html" %}
+
+{% load static %}
+
+{% block title %}
+Products | FarmDirect
+{% endblock %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'products/product_list.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<section class="products-page">
+
+    <!-- Page Header -->
+
+    <div class="products-header">
+
+        <span class="section-label">
+            FARM FRESH
+        </span>
+
+        <h1>
+            Fresh Farm Products
+        </h1>
+
+        <p>
+            Discover fresh and quality agricultural products
+            directly from local farmers.
+        </p>
+
+    </div>
+
+
+    <!-- Search and Filter -->
+
+    <form method="GET" class="product-filters">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search products..."
+                value="{{ search_query }}"
+            >
+
+        </div>
+
+
+        <div class="category-filter">
+
+            <select name="category">
+
+                <option value="">
+                    All Categories
+                </option>
+
+                {% for category in categories %}
+
+                    <option
+                        value="{{ category.id }}"
+                        {% if selected_category == category.id|stringformat:"s" %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ category.name }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+
+        </div>
+
+
+        <button type="submit" class="filter-button">
+            Search
+        </button>
+
+    </form>
+
+
+    <!-- Product Grid -->
+
+    <div class="product-grid">
+
+        {% for product in products %}
+
+        <article class="product-card">
+
+            <!-- Product Image -->
+
+            <div class="product-image">
+
+                {% if product.image %}
+
+                    <img
+                        src="{{ product.image.url }}"
+                        alt="{{ product.name }}"
+                    >
+
+                {% else %}
+
+                    <span class="product-placeholder">
+                        🌱
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- Product Information -->
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    {{ product.category.name }}
+                </span>
+
+                <h2 class="product-name">
+                    {{ product.name }}
+                </h2>
+
+                <p class="product-description">
+                    {{ product.description }}
+                </p>
+
+
+                <!-- Product Details -->
+
+                <div class="product-details">
+
+                    <div class="product-price">
+
+                        <span>
+                            ₹{{ product.price }}
+                        </span>
+
+                        <small>
+                            / {{ product.unit }}
+                        </small>
+
+                    </div>
+
+
+                    <div class="product-stock">
+
+                        {{ product.quantity }}
+                        {{ product.unit }}
+                        available
+
+                    </div>
+
+                </div>
+
+
+                <!-- Action -->
+
+                <a
+                    href="{% url 'product_detail' product.id %}"
+                    class="view-product"
+                >
+                    View Product
+                </a>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="no-products">
+
+            <h2>
+                No products found
+            </h2>
+
+            <p>
+                Try another product name or category.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
