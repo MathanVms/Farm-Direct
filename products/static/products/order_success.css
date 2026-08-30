@@ -1,0 +1,189 @@
+/* =================================
+   Order Success Page
+================================= */
+
+.order-success-page {
+    min-height: 65vh;
+
+    padding: 70px 8%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =================================
+   Success Card
+================================= */
+
+.success-card {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 50px 40px;
+
+    background-color: #ffffff;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =================================
+   Success Icon
+================================= */
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #eef7ee;
+
+    color: #2e7d32;
+
+    font-size: 36px;
+    font-weight: 700;
+}
+
+
+/* =================================
+   Success Header
+================================= */
+
+.success-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #2e7d32;
+}
+
+.success-card h1 {
+    margin-bottom: 15px;
+
+    font-size: 32px;
+
+    color: #1b5e20;
+}
+
+.success-card p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =================================
+   Actions
+================================= */
+
+.success-actions {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.continue-button,
+.home-button {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.continue-button {
+    background-color: #2e7d32;
+
+    color: #ffffff;
+}
+
+.continue-button:hover {
+    background-color: #1b5e20;
+
+    transform: translateY(-1px);
+}
+
+.home-button {
+    border: 1px solid #2e7d32;
+
+    color: #2e7d32;
+
+    background-color: #ffffff;
+}
+
+.home-button:hover {
+    background-color: #eef7ee;
+
+    transform: translateY(-1px);
+}
+
+
+/* =================================
+   Responsive Design
+================================= */
+
+@media (max-width: 600px) {
+
+    .order-success-page {
+        padding: 50px 5%;
+    }
+
+    .success-card {
+        padding: 40px 25px;
+    }
+
+    .success-card h1 {
+        font-size: 27px;
+    }
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .continue-button,
+    .home-button {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+}
