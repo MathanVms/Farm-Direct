@@ -1,0 +1,209 @@
+{% extends "products/base.html" %}
+
+{% load static %}
+
+{% block title %}
+Shopping Cart | FarmDirect
+{% endblock %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'products/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="cart-page">
+
+```
+<div class="cart-header">
+
+    <span class="cart-label">
+        YOUR CART
+    </span>
+
+    <h1>
+        Shopping Cart
+    </h1>
+
+    <p>
+        Review the fresh products you've selected from local farmers.
+    </p>
+
+</div>
+
+
+<div class="cart-container">
+
+    <div class="cart-items">
+
+        {% for item in cart_items %}
+
+        <article class="cart-item">
+
+            <div class="cart-item-image">
+
+                {% if item.product.image %}
+
+                    <img
+                        src="{{ item.product.image.url }}"
+                        alt="{{ item.product.name }}"
+                    >
+
+                {% else %}
+
+                    🌱
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="cart-item-info">
+
+                <span class="cart-item-category">
+                    {{ item.product.category.name }}
+                </span>
+
+                <h2>
+                    {{ item.product.name }}
+                </h2>
+
+                <p>
+                    {{ item.product.description }}
+                </p>
+
+                <div class="cart-item-price">
+                    ₹{{ item.product.price }} / {{ item.product.unit }}
+                </div>
+
+            </div>
+
+
+            <div class="cart-item-quantity">
+
+    <label>
+        Quantity
+    </label>
+
+    <div class="quantity-controls">
+
+        <a
+            href="{% url 'decrease_cart_quantity' item.product.id %}"
+            class="quantity-button"
+        >
+            −
+        </a>
+
+        <span class="quantity-value">
+            {{ item.quantity }}
+        </span>
+
+        <a
+            href="{% url 'increase_cart_quantity' item.product.id %}"
+            class="quantity-button"
+        >
+            +
+        </a>
+
+    </div>
+
+</div>
+
+           <div class="cart-item-total">
+
+    <span>
+        Total
+    </span>
+
+    <strong>
+        ₹{{ item.item_total }}
+    </strong>
+
+</div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="no-products">
+
+            <h2>
+                Your cart is empty
+            </h2>
+
+            <p>
+                Add some fresh products to your cart.
+            </p>
+
+            <a href="{% url 'product_list' %}">
+                Browse Products
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    <aside class="cart-summary">
+
+        <h2>
+            Order Summary
+        </h2>
+
+        <div class="summary-row">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong>
+                ₹{{ subtotal }}
+            </strong>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>
+                Delivery
+            </span>
+
+            <strong>
+                ₹0.00
+            </strong>
+
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong>
+                ₹{{ total }}
+            </strong>
+
+        </div>
+
+        <a href="{% url 'checkout' %}" class="checkout-button">
+            Proceed to Checkout
+        </a>
+
+        <a href="{% url 'product_list' %}" class="continue-shopping">
+            Continue Shopping
+        </a>
+
+    </aside>
+
+</div>
+```
+
+</section>
+
+{% endblock %}
